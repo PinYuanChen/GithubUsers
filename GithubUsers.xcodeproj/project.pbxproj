@@ -13,6 +13,10 @@
 		CE34F6592760DB24002E2F16 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F6582760DB24002E2F16 /* MainTabBarCoordinator.swift */; };
 		CE34F65D2760F0E3002E2F16 /* UserListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F65C2760F0E3002E2F16 /* UserListCoordinator.swift */; };
 		CE34F6602760F10B002E2F16 /* PersonalInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F65F2760F10B002E2F16 /* PersonalInfoCoordinator.swift */; };
+		CE34F6632760FAEA002E2F16 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F6622760FAEA002E2F16 /* PersonalInfoViewController.swift */; };
+		CE34F6662760FAFF002E2F16 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F6652760FAFF002E2F16 /* UserListViewController.swift */; };
+		CE34F66A2760FB2C002E2F16 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F6692760FB2C002E2F16 /* UserListViewModel.swift */; };
+		CE34F66E2760FB3A002E2F16 /* PersonalInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F66D2760FB3A002E2F16 /* PersonalInfoViewModel.swift */; };
 		CE6FFDB8275F4BFF00B78A41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FFDB7275F4BFF00B78A41 /* AppDelegate.swift */; };
 		CE6FFDBA275F4BFF00B78A41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FFDB9275F4BFF00B78A41 /* SceneDelegate.swift */; };
 		CE6FFDBC275F4BFF00B78A41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FFDBB275F4BFF00B78A41 /* ViewController.swift */; };
@@ -42,6 +46,10 @@
 		CE34F6582760DB24002E2F16 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
 		CE34F65C2760F0E3002E2F16 /* UserListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCoordinator.swift; sourceTree = "<group>"; };
 		CE34F65F2760F10B002E2F16 /* PersonalInfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoCoordinator.swift; sourceTree = "<group>"; };
+		CE34F6622760FAEA002E2F16 /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
+		CE34F6652760FAFF002E2F16 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		CE34F6692760FB2C002E2F16 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
+		CE34F66D2760FB3A002E2F16 /* PersonalInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewModel.swift; sourceTree = "<group>"; };
 		CE6FFDB4275F4BFF00B78A41 /* GithubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6FFDB7275F4BFF00B78A41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE6FFDB9275F4BFF00B78A41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +93,15 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		CE34F6682760FB17002E2F16 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CE34F6692760FB2C002E2F16 /* UserListViewModel.swift */,
+				CE34F66D2760FB3A002E2F16 /* PersonalInfoViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		CE6FFDAB275F4BFF00B78A41 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +127,7 @@
 				CE6FFDBD275F4BFF00B78A41 /* Main.storyboard */,
 				CE6FFDC2275F4C0100B78A41 /* LaunchScreen.storyboard */,
 				CE6FFDC5275F4C0100B78A41 /* Info.plist */,
+				CE34F6682760FB17002E2F16 /* ViewModels */,
 				CE6FFE0A2760620B00B78A41 /* Coordinators */,
 				CE6FFE042760611800B78A41 /* Views */,
 				CE6FFDF3275FBC2700B78A41 /* Models */,
@@ -151,6 +169,8 @@
 		CE6FFE042760611800B78A41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE34F6622760FAEA002E2F16 /* PersonalInfoViewController.swift */,
+				CE34F6652760FAFF002E2F16 /* UserListViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -253,9 +273,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE34F6542760DA01002E2F16 /* AppCoordinator.swift in Sources */,
+				CE34F66A2760FB2C002E2F16 /* UserListViewModel.swift in Sources */,
 				CE6FFDBC275F4BFF00B78A41 /* ViewController.swift in Sources */,
 				CE6FFDED275FBAE900B78A41 /* UserListAPI.swift in Sources */,
 				CE6FFDF1275FBB0100B78A41 /* PersonalInfoAPI.swift in Sources */,
+				CE34F6632760FAEA002E2F16 /* PersonalInfoViewController.swift in Sources */,
+				CE34F6662760FAFF002E2F16 /* UserListViewController.swift in Sources */,
 				CE6FFDB8275F4BFF00B78A41 /* AppDelegate.swift in Sources */,
 				CE6FFDE9275FBAC400B78A41 /* Decision.swift in Sources */,
 				CE34F6562760DA01002E2F16 /* CoordinatorPrototype.swift in Sources */,
@@ -263,6 +286,7 @@
 				CE6FFDE8275FBAC400B78A41 /* ResponseError.swift in Sources */,
 				CE34F6592760DB24002E2F16 /* MainTabBarCoordinator.swift in Sources */,
 				CE34F6552760DA01002E2F16 /* Coordinator.swift in Sources */,
+				CE34F66E2760FB3A002E2F16 /* PersonalInfoViewModel.swift in Sources */,
 				CE6FFDE7275FBAC400B78A41 /* APIBase.swift in Sources */,
 				CE34F6602760F10B002E2F16 /* PersonalInfoCoordinator.swift in Sources */,
 				CE34F65D2760F0E3002E2F16 /* UserListCoordinator.swift in Sources */,
