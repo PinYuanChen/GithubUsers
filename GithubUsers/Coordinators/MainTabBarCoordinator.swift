@@ -59,7 +59,6 @@ class MainTabBarCoordinator: Coordinator<Void> {
         let tabBarController = createTabBarController(by: tabBarCoordinators)
         rootViewController = tabBarController
         window.rootViewController = rootViewController
-        
     }
     
     // MARK: Private
@@ -111,6 +110,7 @@ private extension MainTabBarCoordinator {
     func createTabBarController(by coords: [CoordinatorPrototype]) -> UITabBarController {
         
         let tabBarController = UITabBarController()
+        // check if nav exists
         let vcs = coords.compactMap {
             $0.navigationController != nil ? $0.navigationController : $0.rootViewController
         }

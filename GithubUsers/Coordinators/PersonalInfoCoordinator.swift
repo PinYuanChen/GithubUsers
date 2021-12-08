@@ -12,8 +12,13 @@ import RxCocoa
 class PersonalInfoCoordinator: Coordinator<Void> {
 
     override func start() {
-//        let vc = PersonalInfoViewController()
-//        rootViewController = vc
+        let vc = PersonalInfoViewController()
+        rootViewController = vc
+        
+        navigationController = UINavigationController(rootViewController: vc)
+        navigationController?.navigationBar.barTintColor = .black
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
     }
 
     override func stop() {

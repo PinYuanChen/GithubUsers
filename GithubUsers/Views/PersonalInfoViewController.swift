@@ -37,7 +37,15 @@ class PersonalInfoViewController: UIViewController {
 private extension PersonalInfoViewController {
 
     func setupUI() {
-
+        configureNavigationController()
+    }
+    
+    func configureNavigationController() {
+        let label = UILabel()
+        label.text = "GitHub"
+        label.font = .boldSystemFont(ofSize: 20)
+        label.textColor = .white
+        navigationItem.leftBarButtonItem = .init(customView: label)
     }
 }
 
