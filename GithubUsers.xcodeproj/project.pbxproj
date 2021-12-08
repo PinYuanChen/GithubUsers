@@ -11,6 +11,8 @@
 		CE34F6552760DA01002E2F16 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F6522760DA01002E2F16 /* Coordinator.swift */; };
 		CE34F6562760DA01002E2F16 /* CoordinatorPrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F6532760DA01002E2F16 /* CoordinatorPrototype.swift */; };
 		CE34F6592760DB24002E2F16 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F6582760DB24002E2F16 /* MainTabBarCoordinator.swift */; };
+		CE34F65D2760F0E3002E2F16 /* UserListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F65C2760F0E3002E2F16 /* UserListCoordinator.swift */; };
+		CE34F6602760F10B002E2F16 /* PersonalInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F65F2760F10B002E2F16 /* PersonalInfoCoordinator.swift */; };
 		CE6FFDB8275F4BFF00B78A41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FFDB7275F4BFF00B78A41 /* AppDelegate.swift */; };
 		CE6FFDBA275F4BFF00B78A41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FFDB9275F4BFF00B78A41 /* SceneDelegate.swift */; };
 		CE6FFDBC275F4BFF00B78A41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FFDBB275F4BFF00B78A41 /* ViewController.swift */; };
@@ -38,6 +40,8 @@
 		CE34F6522760DA01002E2F16 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CE34F6532760DA01002E2F16 /* CoordinatorPrototype.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorPrototype.swift; sourceTree = "<group>"; };
 		CE34F6582760DB24002E2F16 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
+		CE34F65C2760F0E3002E2F16 /* UserListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCoordinator.swift; sourceTree = "<group>"; };
+		CE34F65F2760F10B002E2F16 /* PersonalInfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoCoordinator.swift; sourceTree = "<group>"; };
 		CE6FFDB4275F4BFF00B78A41 /* GithubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6FFDB7275F4BFF00B78A41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE6FFDB9275F4BFF00B78A41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE34F65B2760E888002E2F16 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				CE6FFDC0275F4C0100B78A41 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		CE6FFDAB275F4BFF00B78A41 = {
 			isa = PBXGroup;
 			children = (
@@ -96,12 +108,12 @@
 				CE6FFDB9275F4BFF00B78A41 /* SceneDelegate.swift */,
 				CE6FFDBB275F4BFF00B78A41 /* ViewController.swift */,
 				CE6FFDBD275F4BFF00B78A41 /* Main.storyboard */,
-				CE6FFDC0275F4C0100B78A41 /* Assets.xcassets */,
 				CE6FFDC2275F4C0100B78A41 /* LaunchScreen.storyboard */,
 				CE6FFDC5275F4C0100B78A41 /* Info.plist */,
 				CE6FFE0A2760620B00B78A41 /* Coordinators */,
 				CE6FFE042760611800B78A41 /* Views */,
 				CE6FFDF3275FBC2700B78A41 /* Models */,
+				CE34F65B2760E888002E2F16 /* Resource */,
 				CE6FFDE1275FB9CB00B78A41 /* Network */,
 			);
 			path = GithubUsers;
@@ -148,6 +160,8 @@
 			children = (
 				CE34F6512760DA01002E2F16 /* AppCoordinator.swift */,
 				CE34F6582760DB24002E2F16 /* MainTabBarCoordinator.swift */,
+				CE34F65C2760F0E3002E2F16 /* UserListCoordinator.swift */,
+				CE34F65F2760F10B002E2F16 /* PersonalInfoCoordinator.swift */,
 				CE34F6522760DA01002E2F16 /* Coordinator.swift */,
 				CE34F6532760DA01002E2F16 /* CoordinatorPrototype.swift */,
 			);
@@ -250,6 +264,8 @@
 				CE34F6592760DB24002E2F16 /* MainTabBarCoordinator.swift in Sources */,
 				CE34F6552760DA01002E2F16 /* Coordinator.swift in Sources */,
 				CE6FFDE7275FBAC400B78A41 /* APIBase.swift in Sources */,
+				CE34F6602760F10B002E2F16 /* PersonalInfoCoordinator.swift in Sources */,
+				CE34F65D2760F0E3002E2F16 /* UserListCoordinator.swift in Sources */,
 				CE6FFDE6275FBAC400B78A41 /* TATargetType.swift in Sources */,
 				CE6FFDF5275FBC5900B78A41 /* PersonalInfoModel.swift in Sources */,
 			);

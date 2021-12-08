@@ -9,21 +9,118 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+// MARK: - Tab bar item
+enum TabBarItem: Int, CaseIterable {
+    
+    case userList = 0
+    case personalInfo
+    
+    var title: String {
+        switch self {
+        case .userList:
+            return "User"
+        case .personalInfo:
+            return "Mine"
+        }
+    }
+    
+    var image: UIImage? {
+        switch self {
+        case .userList:
+            return UIImage(named: "list")
+        case .personalInfo:
+            return UIImage(named: "person")
+        }
+    }
+}
+
+
 class MainTabBarCoordinator: Coordinator<Void> {
 
-    // MARK: - Life cycle
+    // MARK: Properties
+    var tabBarController: UITabBarController? {
+        rootViewController as? UITabBarController
+    }
+    
+    // MARK: Life cycle
     init(window: UIWindow) {
         self.window = window
     }
     
     override func start() {
         
-    }
-
-    override func stop() {
+        let tabBarCoordinators = setupCoordinators()
+        tabBarCoordinators.forEach {
+            $0.start()
+            store(coordinator: $0)
+        }
+        setupTabBarItem(by: tabBarCoordinators)
+        
+        let tabBarController = createTabBarController(by: tabBarCoordinators)
+        rootViewController = tabBarController
+        window.rootViewController = rootViewController
+        
     }
     
-    // MARK: - Private
-
+    // MARK: Private
     private let window: UIWindow
+}
+
+// MARK: - Tab bar
+
+private extension MainTabBarCoordinator {
+    
+    func createTabBarItem(from item: TabBarItem) -> UITabBarItem {
+        .init(title: item.title, image: item.image, tag: item.rawValue)
+    }
+    
+    // set up coordinators for each tab
+    func setupCoordinators() -> [CoordinatorPrototype] {
+        var coordinators = [CoordinatorPrototype]()
+        
+        TabBarItem.allCases.forEach {
+            
+            let coordinator: CoordinatorPrototype
+            
+            switch $0 {
+            case .userList:
+                let tab = UserListCoordinator()
+                coordinator = tab
+                
+            case .personalInfo:
+
+                let tab = PersonalInfoCoordinator()
+                coordinator = tab
+            }
+            
+            coordinators.append(coordinator)
+        }
+        
+        return coordinators
+    }
+    
+    // setup tab bar item for each vc
+    func setupTabBarItem(by coordinators: [CoordinatorPrototype]) {
+        for (idx, coord) in coordinators.enumerated() {
+            if let item = TabBarItem(rawValue: idx) {
+                coord.rootViewController?.tabBarItem = createTabBarItem(from: item)
+            }
+        }
+    }
+    
+    func createTabBarController(by coords: [CoordinatorPrototype]) -> UITabBarController {
+        
+        let tabBarController = UITabBarController()
+        let vcs = coords.compactMap {
+            $0.navigationController != nil ? $0.navigationController : $0.rootViewController
+        }
+
+        tabBarController.setViewControllers(vcs, animated: true)
+        tabBarController.tabBar.tintColor = .black
+        tabBarController.tabBar.unselectedItemTintColor = .lightGray
+        tabBarController.tabBar.isTranslucent = false
+        tabBarController.tabBar.backgroundColor = .white
+
+        return tabBarController
+    }
 }
