@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		CE262DE9276233E400E432E2 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE262DE8276233E400E432E2 /* UserTableViewCell.swift */; };
 		CE262DED27623E5400E432E2 /* UserDetailAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE262DEC27623E5400E432E2 /* UserDetailAPI.swift */; };
+		CE262DF32762486300E432E2 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE262DF22762486300E432E2 /* UserDetailViewModel.swift */; };
+		CE262DF72762493A00E432E2 /* UserDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE262DF62762493A00E432E2 /* UserDetailCoordinator.swift */; };
+		CE262DFB2762496400E432E2 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE262DFA2762496400E432E2 /* UserDetailViewController.swift */; };
 		CE34F6542760DA01002E2F16 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F6512760DA01002E2F16 /* AppCoordinator.swift */; };
 		CE34F6552760DA01002E2F16 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F6522760DA01002E2F16 /* Coordinator.swift */; };
 		CE34F6562760DA01002E2F16 /* CoordinatorPrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F6532760DA01002E2F16 /* CoordinatorPrototype.swift */; };
@@ -47,6 +50,9 @@
 /* Begin PBXFileReference section */
 		CE262DE8276233E400E432E2 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		CE262DEC27623E5400E432E2 /* UserDetailAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailAPI.swift; sourceTree = "<group>"; };
+		CE262DF22762486300E432E2 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		CE262DF62762493A00E432E2 /* UserDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailCoordinator.swift; sourceTree = "<group>"; };
+		CE262DFA2762496400E432E2 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		CE34F6512760DA01002E2F16 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CE34F6522760DA01002E2F16 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CE34F6532760DA01002E2F16 /* CoordinatorPrototype.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorPrototype.swift; sourceTree = "<group>"; };
@@ -98,10 +104,44 @@
 		CE262DE7276233CD00E432E2 /* UserList */ = {
 			isa = PBXGroup;
 			children = (
+				CE262DF92762494D00E432E2 /* UserDetail */,
 				CE34F6652760FAFF002E2F16 /* UserListViewController.swift */,
 				CE262DE8276233E400E432E2 /* UserTableViewCell.swift */,
 			);
 			path = UserList;
+			sourceTree = "<group>";
+		};
+		CE262DEF2762482900E432E2 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				CE262DF12762484900E432E2 /* UserDetail */,
+				CE34F6692760FB2C002E2F16 /* UserListViewModel.swift */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		CE262DF02762483A00E432E2 /* PersonalInfo */ = {
+			isa = PBXGroup;
+			children = (
+				CE34F66D2760FB3A002E2F16 /* PersonalInfoViewModel.swift */,
+			);
+			path = PersonalInfo;
+			sourceTree = "<group>";
+		};
+		CE262DF12762484900E432E2 /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CE262DF22762486300E432E2 /* UserDetailViewModel.swift */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
+		CE262DF92762494D00E432E2 /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CE262DFA2762496400E432E2 /* UserDetailViewController.swift */,
+			);
+			path = UserDetail;
 			sourceTree = "<group>";
 		};
 		CE34F65B2760E888002E2F16 /* Resource */ = {
@@ -115,8 +155,8 @@
 		CE34F6682760FB17002E2F16 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				CE34F6692760FB2C002E2F16 /* UserListViewModel.swift */,
-				CE34F66D2760FB3A002E2F16 /* PersonalInfoViewModel.swift */,
+				CE262DEF2762482900E432E2 /* UserList */,
+				CE262DF02762483A00E432E2 /* PersonalInfo */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -203,6 +243,7 @@
 				CE34F6512760DA01002E2F16 /* AppCoordinator.swift */,
 				CE34F6582760DB24002E2F16 /* MainTabBarCoordinator.swift */,
 				CE34F65C2760F0E3002E2F16 /* UserListCoordinator.swift */,
+				CE262DF62762493A00E432E2 /* UserDetailCoordinator.swift */,
 				CE34F65F2760F10B002E2F16 /* PersonalInfoCoordinator.swift */,
 				CE34F6522760DA01002E2F16 /* Coordinator.swift */,
 				CE34F6532760DA01002E2F16 /* CoordinatorPrototype.swift */,
@@ -315,6 +356,7 @@
 				CE34F6662760FAFF002E2F16 /* UserListViewController.swift in Sources */,
 				CE6FFDB8275F4BFF00B78A41 /* AppDelegate.swift in Sources */,
 				CE6FFDE9275FBAC400B78A41 /* Decision.swift in Sources */,
+				CE262DFB2762496400E432E2 /* UserDetailViewController.swift in Sources */,
 				CEB208D82761D065000C6271 /* Cell+Exts.swift in Sources */,
 				CE34F6562760DA01002E2F16 /* CoordinatorPrototype.swift in Sources */,
 				CE6FFDBA275F4BFF00B78A41 /* SceneDelegate.swift in Sources */,
@@ -326,7 +368,9 @@
 				CE6FFDE7275FBAC400B78A41 /* APIBase.swift in Sources */,
 				CE34F6602760F10B002E2F16 /* PersonalInfoCoordinator.swift in Sources */,
 				CE34F65D2760F0E3002E2F16 /* UserListCoordinator.swift in Sources */,
+				CE262DF32762486300E432E2 /* UserDetailViewModel.swift in Sources */,
 				CE6FFDE6275FBAC400B78A41 /* TATargetType.swift in Sources */,
+				CE262DF72762493A00E432E2 /* UserDetailCoordinator.swift in Sources */,
 				CE6FFDF5275FBC5900B78A41 /* PersonalInfoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -42,7 +42,10 @@ class UserListCoordinator: Coordinator<Void> {
 private extension UserListCoordinator {
     
     func showUserDetail(username: String) {
-        
+        let next = UserDetailCoordinator(username: username)
+        next.start()
+        store(coordinator: next)
+        presentCoordinator(coordinator: next)
     }
     
 }
