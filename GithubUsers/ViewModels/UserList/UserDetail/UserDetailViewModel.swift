@@ -16,7 +16,7 @@ protocol UserDetailViewModelInput {
 }
 
 protocol UserDetailViewModelOutput {
-
+    var userModel: Observable<UserModel> { get }
 }
 
 protocol UserDetailViewModelPrototype {
@@ -43,6 +43,7 @@ class UserDetailViewModel: UserDetailViewModelPrototype {
     }
     
     private let userDetailAPI: UserDetailAPIPrototype?
+    private let _userModel = BehaviorRelay<UserModel?>(value: nil)
     private let username: String
     private let disposeBag = DisposeBag()
 }
@@ -54,7 +55,9 @@ extension UserDetailViewModel: UserDetailViewModelInput {
 }
 
 extension UserDetailViewModel: UserDetailViewModelOutput {
-
+    var userModel: Observable<UserModel> {
+        _userModel.compactMap{ $0 }.asObservable()
+    }
 }
 
 // MARK: - Private function
@@ -62,6 +65,21 @@ extension UserDetailViewModel: UserDetailViewModelOutput {
 private extension UserDetailViewModel {
 
     func bind(userDetailAPI: UserDetailAPIPrototype) {
+        
+        userDetailAPI
+            .result
+            .subscribe(onNext: { [weak self] model in
+                guard let self = self else { return }
+                self._userModel.accept(model)
+            })
+            .disposed(by: disposeBag)
+        
+        userDetailAPI
+            .error
+            .subscribe(onNext: { error in
+                print("\(error)")
+            })
+            .disposed(by: disposeBag)
         
         userDetailAPI.fetch(username: username)
     }

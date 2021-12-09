@@ -25,10 +25,18 @@ class UserDetailViewController: UIViewController {
         guard let viewModel = viewModel else { return }
 
         bind(viewModel)
+        bind()
     }
 
     // MARK: - Private property
-
+    private let closeButton = UIButton()
+    private let avatarImageView = UIImageView()
+    private let nameLabel = UILabel()
+    private let divider = UIView()
+    private let infoStack = UIStackView()
+    private let nameInfo = IconInfoView()
+    private let locationInfo = IconInfoView()
+    private let webInfo = IconInfoView()
     private let disposeBag = DisposeBag()
 }
 
@@ -37,7 +45,55 @@ class UserDetailViewController: UIViewController {
 private extension UserDetailViewController {
 
     func setupUI() {
-
+        view.backgroundColor = .white
+        configureCloseButton()
+        configureAvatarImageView()
+        configureNameLabel()
+        configureDivider()
+        configureInfoStack()
+    }
+    
+    func configureCloseButton() {
+        view.addSubview(closeButton)
+        closeButton.snp.makeConstraints {
+            $0.size.equalTo(20)
+            $0.top.leading.equalToSuperview().offset(10)
+        }
+        
+        closeButton.setImage(UIImage(named: "close"), for: .normal)
+    }
+    
+    func configureAvatarImageView() {
+        view.addSubview(avatarImageView)
+        avatarImageView.snp.makeConstraints {
+            $0.size.equalTo(150)
+            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset(100)
+        }
+        
+        avatarImageView.layer.cornerRadius = 75
+        avatarImageView.clipsToBounds = true
+        avatarImageView.contentMode = .scaleAspectFill
+    }
+    
+    func configureNameLabel() {
+        view.addSubview(nameLabel)
+        nameLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(avatarImageView.snp.bottom).offset(10)
+        }
+        
+        nameLabel.textAlignment = .center
+        nameLabel.font = .systemFont(ofSize: 20)
+        nameLabel.textColor = .darkGray
+    }
+    
+    func configureDivider() {
+        
+    }
+    
+    func configureInfoStack() {
+        
     }
 }
 
@@ -52,6 +108,29 @@ private extension UserDetailViewController {
 private extension UserDetailViewController {
 
     func bind(_ viewModel: UserDetailViewModelPrototype) {
-
+        
+        viewModel
+            .output
+            .userModel
+            .subscribe(onNext: { [weak self] model in
+                guard let self = self,
+                      let imgUrl = model.avatarURL else { return }
+                self.avatarImageView.kf.setImage(with: URL(string: imgUrl))
+                self.nameLabel.text = model.login
+            })
+            .disposed(by: disposeBag)
+        
+    }
+    
+    func bind() {
+        
+        closeButton
+            .rx
+            .tap
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+            })
+            .disposed(by: disposeBag)
+        
     }
 }
