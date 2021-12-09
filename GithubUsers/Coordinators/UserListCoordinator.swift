@@ -21,9 +21,28 @@ class UserListCoordinator: Coordinator<Void> {
         
         let vm = UserListViewModel(userListAPI: UserListAPI())
         vc.viewModel = vm
+        
+        vm
+            .reaction
+            .subscribe(onNext: { [weak self] reaction in
+                guard let self = self else { return }
+                switch reaction {
+                case .showUserDetail(username: let username):
+                    self.showUserDetail(username: username)
+                }
+            })
+            .disposed(by: disposeBag)
     }
 
     override func stop() {
+    }
+    
+}
+
+private extension UserListCoordinator {
+    
+    func showUserDetail(username: String) {
+        
     }
     
 }

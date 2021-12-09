@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE262DE9276233E400E432E2 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE262DE8276233E400E432E2 /* UserTableViewCell.swift */; };
+		CE262DED27623E5400E432E2 /* UserDetailAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE262DEC27623E5400E432E2 /* UserDetailAPI.swift */; };
 		CE34F6542760DA01002E2F16 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F6512760DA01002E2F16 /* AppCoordinator.swift */; };
 		CE34F6552760DA01002E2F16 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F6522760DA01002E2F16 /* Coordinator.swift */; };
 		CE34F6562760DA01002E2F16 /* CoordinatorPrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F6532760DA01002E2F16 /* CoordinatorPrototype.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		CE262DE8276233E400E432E2 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		CE262DEC27623E5400E432E2 /* UserDetailAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailAPI.swift; sourceTree = "<group>"; };
 		CE34F6512760DA01002E2F16 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CE34F6522760DA01002E2F16 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CE34F6532760DA01002E2F16 /* CoordinatorPrototype.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorPrototype.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				CE6FFDEC275FBAE900B78A41 /* UserListAPI.swift */,
+				CE262DEC27623E5400E432E2 /* UserDetailAPI.swift */,
 				CE6FFDF0275FBB0100B78A41 /* PersonalInfoAPI.swift */,
 			);
 			path = APIs;
@@ -303,6 +306,7 @@
 			files = (
 				CE34F6542760DA01002E2F16 /* AppCoordinator.swift in Sources */,
 				CE262DE9276233E400E432E2 /* UserTableViewCell.swift in Sources */,
+				CE262DED27623E5400E432E2 /* UserDetailAPI.swift in Sources */,
 				CE34F66A2760FB2C002E2F16 /* UserListViewModel.swift in Sources */,
 				CE6FFDBC275F4BFF00B78A41 /* ViewController.swift in Sources */,
 				CE6FFDED275FBAE900B78A41 /* UserListAPI.swift in Sources */,

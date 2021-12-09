@@ -9,10 +9,17 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+// MARK: - Reaction
+
+enum UserListViewModelReaction {
+    case showUserDetail(username: String)
+}
+
+
 // MARK: - Prototype
 
 protocol UserListViewModelInput {
-
+    func showUserDetailInfo(username: String)
 }
 
 protocol UserListViewModelOutput {
@@ -30,27 +37,36 @@ class UserListViewModel: UserListViewModelPrototype {
 
     var input: UserListViewModelInput { self }
     var output: UserListViewModelOutput { self }
+    let reaction = PublishRelay<UserListViewModelReaction>()
 
-    init(userListAPI: UserListAPIPrototype) {
+    init(userListAPI: UserListAPIPrototype?) {
+        
         self.userListAPI = userListAPI
+        
         guard let userListAPI = self.userListAPI else {
             return
         }
+        
         bind(userListAPI: userListAPI)
     }
     
     private let userListAPI: UserListAPIPrototype?
-    private var userList = BehaviorRelay<[UserModel]>(value: [])
+    private let userList = BehaviorRelay<[UserModel]>(value: [])
     private let disposeBag = DisposeBag()
 }
 
 // MARK: - Input & Output
 
 extension UserListViewModel: UserListViewModelInput {
-
+    
+    func showUserDetailInfo(username: String) {
+        self.reaction.accept(.showUserDetail(username: username))
+    }
+    
 }
 
 extension UserListViewModel: UserListViewModelOutput {
+    
     var models: Observable<[UserModel]> {
         userList.compactMap { $0 }.asObservable()
     }
@@ -77,5 +93,6 @@ private extension UserListViewModel {
             .disposed(by: disposeBag)
 
         userListAPI.fetch()
+        
     }
 }
