@@ -22,7 +22,7 @@ protocol UserDetailViewModelInput {
 }
 
 protocol UserDetailViewModelOutput {
-    var userModel: Observable<UserModel> { get }
+    var userModel: Observable<PersonalInfoModel> { get }
 }
 
 protocol UserDetailViewModelPrototype {
@@ -50,7 +50,7 @@ class UserDetailViewModel: UserDetailViewModelPrototype {
     }
     
     private let userDetailAPI: UserDetailAPIPrototype?
-    private let _userModel = BehaviorRelay<UserModel?>(value: nil)
+    private let _userModel = BehaviorRelay<PersonalInfoModel?>(value: nil)
     private let username: String
     private let disposeBag = DisposeBag()
 }
@@ -64,7 +64,7 @@ extension UserDetailViewModel: UserDetailViewModelInput {
 }
 
 extension UserDetailViewModel: UserDetailViewModelOutput {
-    var userModel: Observable<UserModel> {
+    var userModel: Observable<PersonalInfoModel> {
         _userModel.compactMap{ $0 }.asObservable()
     }
 }

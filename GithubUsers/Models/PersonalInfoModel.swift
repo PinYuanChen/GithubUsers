@@ -72,7 +72,8 @@ struct PersonalInfoModel: Codable {
         case twitterUsername = "twitter_username"
         case publicRepos = "public_repos"
         case publicGists = "public_gists"
-        case followers, following
+        case followers
+        case following
         case createdAt = "created_at"
         case updatedAt = "updated_at"
     }

@@ -12,7 +12,7 @@ import Moya
 
 private struct RequestTargetType: TATargetType {
 
-    typealias ResponseType = UserModel
+    typealias ResponseType = PersonalInfoModel
 
     var username: String
     
@@ -31,7 +31,7 @@ private struct RequestTargetType: TATargetType {
 
 protocol UserDetailAPIPrototype {
 
-    var result: Observable<UserModel> { get }
+    var result: Observable<PersonalInfoModel> { get }
     
     var error: Observable<ResponseError> { get }
     
@@ -40,7 +40,7 @@ protocol UserDetailAPIPrototype {
 
 struct UserDetailAPI: UserDetailAPIPrototype {
 
-    var result: Observable<UserModel> { _result.asObservable() }
+    var result: Observable<PersonalInfoModel> { _result.asObservable() }
     var error: Observable<ResponseError> { _error.asObservable() }
 
     func fetch(username: String) {
@@ -58,6 +58,6 @@ struct UserDetailAPI: UserDetailAPIPrototype {
         }
     }
 
-    private let _result = PublishRelay<UserModel>()
+    private let _result = PublishRelay<PersonalInfoModel>()
     private let _error = PublishRelay<ResponseError>()
 }
