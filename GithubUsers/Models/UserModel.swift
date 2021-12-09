@@ -27,6 +27,8 @@ struct UserModel: Codable {
     let receivedEventsURL: String?
     let type: String?
     let siteAdmin: Bool?
+    let name: String?
+    let location: String?
 
     enum CodingKeys: String, CodingKey {
         case login, id
@@ -46,6 +48,8 @@ struct UserModel: Codable {
         case receivedEventsURL = "received_events_url"
         case type
         case siteAdmin = "site_admin"
+        case name
+        case location
     }
     
 }

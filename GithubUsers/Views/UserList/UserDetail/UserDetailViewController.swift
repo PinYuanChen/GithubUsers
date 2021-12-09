@@ -93,14 +93,33 @@ private extension UserDetailViewController {
         divider.snp.makeConstraints {
             $0.height.equalTo(0.5)
             $0.width.equalToSuperview()
-            $0.top.equalTo(nameLabel.snp.bottom).offset(20)
+            $0.top.equalTo(nameLabel.snp.bottom).offset(40)
         }
         
         divider.backgroundColor = .lightGray
     }
     
     func configureInfoStack() {
+        view.addSubview(infoStack)
+        infoStack.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(divider.snp.bottom).offset(40)
+            $0.width.equalToSuperview().multipliedBy(0.6)
+            $0.height.equalTo(180)
+        }
         
+        infoStack.axis = .vertical
+        infoStack.distribution = .fillEqually
+        
+        [nameInfo, locationInfo, webInfo].forEach {
+            $0.label.textColor = .lightGray
+            $0.label.adjustsFontSizeToFitWidth = true
+            infoStack.addArrangedSubview($0)
+        }
+        
+        nameInfo.iconImageView.image = UIImage(named: "user")
+        locationInfo.iconImageView.image = UIImage(named: "place")
+        webInfo.iconImageView.image = UIImage(named: "link")
     }
 }
 
@@ -123,7 +142,10 @@ private extension UserDetailViewController {
                 guard let self = self,
                       let imgUrl = model.avatarURL else { return }
                 self.avatarImageView.kf.setImage(with: URL(string: imgUrl))
-                self.nameLabel.text = model.login
+                self.nameLabel.text = model.name
+                self.nameInfo.label.text = model.login
+                self.locationInfo.label.text = model.location
+                self.webInfo.label.text = model.url
             })
             .disposed(by: disposeBag)
         
