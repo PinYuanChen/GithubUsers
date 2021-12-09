@@ -103,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE172C5427626CBB00A5039D /* PersonalInfo */ = {
+			isa = PBXGroup;
+			children = (
+				CE34F6622760FAEA002E2F16 /* PersonalInfoViewController.swift */,
+			);
+			path = PersonalInfo;
+			sourceTree = "<group>";
+		};
 		CE262DE7276233CD00E432E2 /* UserList */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,7 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				CE262DE7276233CD00E432E2 /* UserList */,
-				CE34F6622760FAEA002E2F16 /* PersonalInfoViewController.swift */,
+				CE172C5427626CBB00A5039D /* PersonalInfo */,
 			);
 			path = Views;
 			sourceTree = "<group>";

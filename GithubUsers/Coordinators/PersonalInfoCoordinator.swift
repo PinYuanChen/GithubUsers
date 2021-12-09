@@ -19,6 +19,8 @@ class PersonalInfoCoordinator: Coordinator<Void> {
         navigationController?.navigationBar.barTintColor = .black
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
+        let vm = PersonalInfoViewModel(api: PersonalInfoAPI())
+        vc.viewModel = vm
     }
 
     override func stop() {
