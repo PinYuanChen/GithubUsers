@@ -19,6 +19,8 @@ class UserListCoordinator: Coordinator<Void> {
         navigationController?.navigationBar.barTintColor = .black
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
+        let vm = UserListViewModel(userListAPI: UserListAPI())
+        vc.viewModel = vm
     }
 
     override func stop() {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE262DE9276233E400E432E2 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE262DE8276233E400E432E2 /* UserTableViewCell.swift */; };
 		CE34F6542760DA01002E2F16 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F6512760DA01002E2F16 /* AppCoordinator.swift */; };
 		CE34F6552760DA01002E2F16 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F6522760DA01002E2F16 /* Coordinator.swift */; };
 		CE34F6562760DA01002E2F16 /* CoordinatorPrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F6532760DA01002E2F16 /* CoordinatorPrototype.swift */; };
@@ -17,6 +18,7 @@
 		CE34F6662760FAFF002E2F16 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F6652760FAFF002E2F16 /* UserListViewController.swift */; };
 		CE34F66A2760FB2C002E2F16 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F6692760FB2C002E2F16 /* UserListViewModel.swift */; };
 		CE34F66E2760FB3A002E2F16 /* PersonalInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F66D2760FB3A002E2F16 /* PersonalInfoViewModel.swift */; };
+		CE34F67127610869002E2F16 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34F67027610869002E2F16 /* UserModel.swift */; };
 		CE6FFDB8275F4BFF00B78A41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FFDB7275F4BFF00B78A41 /* AppDelegate.swift */; };
 		CE6FFDBA275F4BFF00B78A41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FFDB9275F4BFF00B78A41 /* SceneDelegate.swift */; };
 		CE6FFDBC275F4BFF00B78A41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FFDBB275F4BFF00B78A41 /* ViewController.swift */; };
@@ -37,9 +39,12 @@
 		CE6FFDED275FBAE900B78A41 /* UserListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FFDEC275FBAE900B78A41 /* UserListAPI.swift */; };
 		CE6FFDF1275FBB0100B78A41 /* PersonalInfoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FFDF0275FBB0100B78A41 /* PersonalInfoAPI.swift */; };
 		CE6FFDF5275FBC5900B78A41 /* PersonalInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FFDF4275FBC5900B78A41 /* PersonalInfoModel.swift */; };
+		CEB208D42761CC20000C6271 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CEB208D32761CC20000C6271 /* Kingfisher */; };
+		CEB208D82761D065000C6271 /* Cell+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB208D72761D065000C6271 /* Cell+Exts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE262DE8276233E400E432E2 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		CE34F6512760DA01002E2F16 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CE34F6522760DA01002E2F16 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CE34F6532760DA01002E2F16 /* CoordinatorPrototype.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorPrototype.swift; sourceTree = "<group>"; };
@@ -50,6 +55,7 @@
 		CE34F6652760FAFF002E2F16 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		CE34F6692760FB2C002E2F16 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		CE34F66D2760FB3A002E2F16 /* PersonalInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewModel.swift; sourceTree = "<group>"; };
+		CE34F67027610869002E2F16 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CE6FFDB4275F4BFF00B78A41 /* GithubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6FFDB7275F4BFF00B78A41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE6FFDB9275F4BFF00B78A41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +71,7 @@
 		CE6FFDEC275FBAE900B78A41 /* UserListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListAPI.swift; sourceTree = "<group>"; };
 		CE6FFDF0275FBB0100B78A41 /* PersonalInfoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoAPI.swift; sourceTree = "<group>"; };
 		CE6FFDF4275FBC5900B78A41 /* PersonalInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoModel.swift; sourceTree = "<group>"; };
+		CEB208D72761D065000C6271 /* Cell+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Exts.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +83,7 @@
 				CE6FFDD7275FB7FA00B78A41 /* SnapKit in Frameworks */,
 				CE6FFDD1275FB7D000B78A41 /* RxCocoa in Frameworks */,
 				CE6FFDDB275FB85800B78A41 /* Moya in Frameworks */,
+				CEB208D42761CC20000C6271 /* Kingfisher in Frameworks */,
 				CE6FFDDF275FB85800B78A41 /* RxMoya in Frameworks */,
 				CE6FFDCF275FB7D000B78A41 /* RxSwift in Frameworks */,
 				CE6FFDDD275FB85800B78A41 /* ReactiveMoya in Frameworks */,
@@ -85,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE262DE7276233CD00E432E2 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				CE34F6652760FAFF002E2F16 /* UserListViewController.swift */,
+				CE262DE8276233E400E432E2 /* UserTableViewCell.swift */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
 		CE34F65B2760E888002E2F16 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +144,7 @@
 				CE6FFDBD275F4BFF00B78A41 /* Main.storyboard */,
 				CE6FFDC2275F4C0100B78A41 /* LaunchScreen.storyboard */,
 				CE6FFDC5275F4C0100B78A41 /* Info.plist */,
+				CEB208D62761D034000C6271 /* Extensions */,
 				CE34F6682760FB17002E2F16 /* ViewModels */,
 				CE6FFE0A2760620B00B78A41 /* Coordinators */,
 				CE6FFE042760611800B78A41 /* Views */,
@@ -162,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				CE6FFDF4275FBC5900B78A41 /* PersonalInfoModel.swift */,
+				CE34F67027610869002E2F16 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -169,8 +188,8 @@
 		CE6FFE042760611800B78A41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE262DE7276233CD00E432E2 /* UserList */,
 				CE34F6622760FAEA002E2F16 /* PersonalInfoViewController.swift */,
-				CE34F6652760FAFF002E2F16 /* UserListViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,6 +205,14 @@
 				CE34F6532760DA01002E2F16 /* CoordinatorPrototype.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		CEB208D62761D034000C6271 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEB208D72761D065000C6271 /* Cell+Exts.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +239,7 @@
 				CE6FFDDA275FB85800B78A41 /* Moya */,
 				CE6FFDDC275FB85800B78A41 /* ReactiveMoya */,
 				CE6FFDDE275FB85800B78A41 /* RxMoya */,
+				CEB208D32761CC20000C6271 /* Kingfisher */,
 			);
 			productName = GithubUsers;
 			productReference = CE6FFDB4275F4BFF00B78A41 /* GithubUsers.app */;
@@ -244,6 +272,7 @@
 				CE6FFDCD275FB7D000B78A41 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				CE6FFDD5275FB7FA00B78A41 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CE6FFDD9275FB85800B78A41 /* XCRemoteSwiftPackageReference "Moya" */,
+				CEB208D22761CC20000C6271 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = CE6FFDB5275F4BFF00B78A41 /* Products */;
 			projectDirPath = "";
@@ -273,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE34F6542760DA01002E2F16 /* AppCoordinator.swift in Sources */,
+				CE262DE9276233E400E432E2 /* UserTableViewCell.swift in Sources */,
 				CE34F66A2760FB2C002E2F16 /* UserListViewModel.swift in Sources */,
 				CE6FFDBC275F4BFF00B78A41 /* ViewController.swift in Sources */,
 				CE6FFDED275FBAE900B78A41 /* UserListAPI.swift in Sources */,
@@ -281,9 +311,11 @@
 				CE34F6662760FAFF002E2F16 /* UserListViewController.swift in Sources */,
 				CE6FFDB8275F4BFF00B78A41 /* AppDelegate.swift in Sources */,
 				CE6FFDE9275FBAC400B78A41 /* Decision.swift in Sources */,
+				CEB208D82761D065000C6271 /* Cell+Exts.swift in Sources */,
 				CE34F6562760DA01002E2F16 /* CoordinatorPrototype.swift in Sources */,
 				CE6FFDBA275F4BFF00B78A41 /* SceneDelegate.swift in Sources */,
 				CE6FFDE8275FBAC400B78A41 /* ResponseError.swift in Sources */,
+				CE34F67127610869002E2F16 /* UserModel.swift in Sources */,
 				CE34F6592760DB24002E2F16 /* MainTabBarCoordinator.swift in Sources */,
 				CE34F6552760DA01002E2F16 /* Coordinator.swift in Sources */,
 				CE34F66E2760FB3A002E2F16 /* PersonalInfoViewModel.swift in Sources */,
@@ -517,6 +549,14 @@
 				minimumVersion = 15.0.0;
 			};
 		};
+		CEB208D22761CC20000C6271 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.1.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -554,6 +594,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE6FFDD9275FB85800B78A41 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
+		};
+		CEB208D32761CC20000C6271 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEB208D22761CC20000C6271 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
