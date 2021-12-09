@@ -21,6 +21,16 @@ class UserDetailCoordinator: Coordinator<Void> {
         
         let vm = UserDetailViewModel(username: username, userDetailAPI: UserDetailAPI())
         vc.viewModel = vm
+        
+        vm
+            .reaction
+            .subscribe(onNext: { reaction in
+                switch reaction {
+                case .dismiss:
+                    vc.dismiss(animated: true, completion: nil)
+                }
+            })
+            .disposed(by: disposeBag)
     }
 
     override func stop() {

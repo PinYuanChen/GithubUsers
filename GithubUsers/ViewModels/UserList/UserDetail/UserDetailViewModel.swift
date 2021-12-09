@@ -9,10 +9,16 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+// MARK: - Reaction
+
+enum UserDetailViewModelReaction {
+    case dismiss
+}
+
 // MARK: - Prototype
 
 protocol UserDetailViewModelInput {
-
+    func dismiss()
 }
 
 protocol UserDetailViewModelOutput {
@@ -30,6 +36,7 @@ class UserDetailViewModel: UserDetailViewModelPrototype {
 
     var input: UserDetailViewModelInput { self }
     var output: UserDetailViewModelOutput { self }
+    let reaction = PublishRelay<UserDetailViewModelReaction>()
     
     init(username: String, userDetailAPI: UserDetailAPIPrototype?) {
         
@@ -51,7 +58,9 @@ class UserDetailViewModel: UserDetailViewModelPrototype {
 // MARK: - Input & Output
 
 extension UserDetailViewModel: UserDetailViewModelInput {
-
+    func dismiss() {
+        reaction.accept(.dismiss)
+    }
 }
 
 extension UserDetailViewModel: UserDetailViewModelOutput {

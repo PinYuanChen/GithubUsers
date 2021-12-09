@@ -89,7 +89,14 @@ private extension UserDetailViewController {
     }
     
     func configureDivider() {
+        view.addSubview(divider)
+        divider.snp.makeConstraints {
+            $0.height.equalTo(0.5)
+            $0.width.equalToSuperview()
+            $0.top.equalTo(nameLabel.snp.bottom).offset(20)
+        }
         
+        divider.backgroundColor = .lightGray
     }
     
     func configureInfoStack() {
@@ -128,7 +135,9 @@ private extension UserDetailViewController {
             .rx
             .tap
             .subscribe(onNext: { [weak self] _ in
-                guard let self = self else { return }
+                guard let self = self,
+                      let vm = self.viewModel else { return }
+                vm.input.dismiss()
             })
             .disposed(by: disposeBag)
         
