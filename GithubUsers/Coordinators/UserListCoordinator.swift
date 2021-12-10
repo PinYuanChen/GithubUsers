@@ -9,7 +9,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+// MARK: - Reaction
+enum UserListCoordinatorReaction {
+    case changeTab
+}
+
 class UserListCoordinator: Coordinator<Void> {
+    
+    let reaction = PublishRelay<UserListCoordinatorReaction>()
 
     override func start() {
         let vc = UserListViewController()
@@ -29,6 +36,8 @@ class UserListCoordinator: Coordinator<Void> {
                 switch reaction {
                 case .showUserDetail(username: let username):
                     self.showUserDetail(username: username)
+                case .changeTab:
+                    self.reaction.accept(.changeTab)
                 }
             })
             .disposed(by: disposeBag)

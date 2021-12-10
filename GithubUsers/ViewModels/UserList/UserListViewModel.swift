@@ -13,6 +13,7 @@ import RxCocoa
 
 enum UserListViewModelReaction {
     case showUserDetail(username: String)
+    case changeTab
 }
 
 
@@ -20,6 +21,7 @@ enum UserListViewModelReaction {
 
 protocol UserListViewModelInput {
     func showUserDetailInfo(username: String)
+    func changeSelectedTab()
 }
 
 protocol UserListViewModelOutput {
@@ -61,6 +63,10 @@ extension UserListViewModel: UserListViewModelInput {
     
     func showUserDetailInfo(username: String) {
         self.reaction.accept(.showUserDetail(username: username))
+    }
+    
+    func changeSelectedTab() {
+        self.reaction.accept(.changeTab)
     }
     
 }

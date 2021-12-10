@@ -32,6 +32,7 @@ class UserListViewController: UIViewController {
     // MARK: - Private property
     private var userList = [UserModel]()
     private let tableView = UITableView()
+    private let swipeGesture = UISwipeGestureRecognizer()
     private let disposeBag = DisposeBag()
 }
 
@@ -42,6 +43,7 @@ private extension UserListViewController {
     func setupUI() {
         configureNavigationController()
         configureTableView()
+        configureSwipeGesture()
     }
     
     func configureNavigationController() {
@@ -62,6 +64,11 @@ private extension UserListViewController {
         tableView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+    }
+    
+    func configureSwipeGesture() {
+        view.addGestureRecognizer(swipeGesture)
+        swipeGesture.direction = .left
     }
 }
 
@@ -123,6 +130,14 @@ private extension UserListViewController {
                       let username = self.userList[indexPath.row].login else { return }
                 self.tableView.deselectRow(at: indexPath, animated: true)
                 viewModel.input.showUserDetailInfo(username: username)
+            })
+            .disposed(by: disposeBag)
+        
+        swipeGesture
+            .rx
+            .event
+            .subscribe(onNext: { _ in
+                viewModel.input.changeSelectedTab()
             })
             .disposed(by: disposeBag)
     }
