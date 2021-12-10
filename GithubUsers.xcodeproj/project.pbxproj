@@ -216,6 +216,7 @@
 				CE262E022762552E00E432E2 /* Utilities */,
 				CE34F6682760FB17002E2F16 /* ViewModels */,
 				CE6FFE0A2760620B00B78A41 /* Coordinators */,
+				CE34F6582760DB24002E2F16 /* MainTabBarCoordinator.swift */,
 				CE6FFE042760611800B78A41 /* Views */,
 				CE6FFDF3275FBC2700B78A41 /* Models */,
 				CE34F65B2760E888002E2F16 /* Resource */,
@@ -267,15 +268,38 @@
 		CE6FFE0A2760620B00B78A41 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				CE34F6512760DA01002E2F16 /* AppCoordinator.swift */,
-				CE34F6582760DB24002E2F16 /* MainTabBarCoordinator.swift */,
+				CE9A7F7327630E78003E4800 /* UserList */,
+				CE9A7F7527630EB2003E4800 /* PersonalInfo */,
+				CE9A7F7427630E9C003E4800 /* BaseCoordinator */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		CE9A7F7327630E78003E4800 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
 				CE34F65C2760F0E3002E2F16 /* UserListCoordinator.swift */,
 				CE262DF62762493A00E432E2 /* UserDetailCoordinator.swift */,
-				CE34F65F2760F10B002E2F16 /* PersonalInfoCoordinator.swift */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		CE9A7F7427630E9C003E4800 /* BaseCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CE34F6512760DA01002E2F16 /* AppCoordinator.swift */,
 				CE34F6522760DA01002E2F16 /* Coordinator.swift */,
 				CE34F6532760DA01002E2F16 /* CoordinatorPrototype.swift */,
 			);
-			path = Coordinators;
+			path = BaseCoordinator;
+			sourceTree = "<group>";
+		};
+		CE9A7F7527630EB2003E4800 /* PersonalInfo */ = {
+			isa = PBXGroup;
+			children = (
+				CE34F65F2760F10B002E2F16 /* PersonalInfoCoordinator.swift */,
+			);
+			path = PersonalInfo;
 			sourceTree = "<group>";
 		};
 		CEB208D62761D034000C6271 /* Extensions */ = {

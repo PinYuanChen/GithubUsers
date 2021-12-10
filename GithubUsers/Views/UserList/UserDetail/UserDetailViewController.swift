@@ -11,11 +11,11 @@ import RxCocoa
 
 class UserDetailViewController: UIViewController {
 
-    // MARK: - Property
+    // MARK: Property
 
     var viewModel: UserDetailViewModelPrototype?
 
-    // MARK: - Life cycle
+    // MARK: Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,8 @@ class UserDetailViewController: UIViewController {
         bind()
     }
 
-    // MARK: - Private property
+    // MARK: Private properties
+    
     private let closeButton = UIButton()
     private let avatarImageView = UIImageView()
     private let nameLabel = UILabel()
@@ -121,12 +122,6 @@ private extension UserDetailViewController {
         locationInfo.iconImageView.image = UIImage(named: "place")
         webInfo.iconImageView.image = UIImage(named: "link")
     }
-}
-
-// MARK: - Private func
-
-private extension UserDetailViewController {
-
 }
 
 // MARK: - Binding

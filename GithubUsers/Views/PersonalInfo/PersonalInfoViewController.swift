@@ -11,11 +11,11 @@ import RxCocoa
 
 class PersonalInfoViewController: UIViewController {
 
-    // MARK: - Property
+    // MARK: Property
 
     var viewModel: PersonalInfoViewModelPrototype?
 
-    // MARK: - Life cycle
+    // MARK: Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,8 @@ class PersonalInfoViewController: UIViewController {
         bind(viewModel)
     }
 
-    // MARK: - Private property
+    // MARK: Private properties
+    
     private let bannerImageView = UIImageView()
     private let profileImageView = UIImageView()
     private let nameLabel = UILabel()

@@ -13,11 +13,11 @@ import Kingfisher
 
 class UserListViewController: UIViewController {
 
-    // MARK: - Property
+    // MARK: Property
 
     var viewModel: UserListViewModelPrototype?
 
-    // MARK: - Life cycle
+    // MARK: Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,8 @@ class UserListViewController: UIViewController {
         bind(viewModel)
     }
 
-    // MARK: - Private property
+    // MARK: Private property
+    
     private var userList = [UserModel]()
     private let tableView = UITableView()
     private let swipeGesture = UISwipeGestureRecognizer()
@@ -97,12 +98,6 @@ extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
         65
     }
     
-}
-
-// MARK: - Private func
-
-private extension UserListViewController {
-
 }
 
 // MARK: - Binding

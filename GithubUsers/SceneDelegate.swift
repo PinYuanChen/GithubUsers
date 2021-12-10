@@ -36,7 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidEnterBackground(_ scene: UIScene) { }
 
-    // MARK: - Private property
+    // MARK: Private property
 
     private(set) var appCoordinator: AppCoordinator?
 

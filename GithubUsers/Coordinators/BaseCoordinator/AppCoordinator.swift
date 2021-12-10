@@ -11,7 +11,7 @@ import RxCocoa
 
 class AppCoordinator: Coordinator<Void> {
 
-    // MARK: - Life cycle
+    // MARK: Life cycle
 
     init(window: UIWindow) {
         self.window = window
@@ -23,7 +23,7 @@ class AppCoordinator: Coordinator<Void> {
         store(coordinator: next)
     }
 
-    // MARK: - Private
+    // MARK: Private
 
     private let window: UIWindow
 }

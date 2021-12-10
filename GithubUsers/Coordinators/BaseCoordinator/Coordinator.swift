@@ -13,7 +13,7 @@ class Coordinator<ReactionType>: CoordinatorPrototype {
 
     typealias CoordinatorReaction = ReactionType
 
-    // MARK: - Properties
+    // MARK: Property
     var navigationController: UINavigationController?
     var rootViewController: UIViewController?
     let identifier: UUID = UUID()

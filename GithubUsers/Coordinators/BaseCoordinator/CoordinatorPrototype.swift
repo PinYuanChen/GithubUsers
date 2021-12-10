@@ -10,12 +10,14 @@ import UIKit
 protocol CoordinatorPrototype: AnyObject {
 
     // MARK: - Properties
+    
     var navigationController: UINavigationController? { get set }
     var rootViewController: UIViewController? { get }
     var identifier: UUID { get }
     var childCoordinators: [UUID: CoordinatorPrototype] { get set }
 
-    // MARK: - Functions
+    // MARK: Functions
+    
     func start()
     func stop()
     func store(coordinator: CoordinatorPrototype)
