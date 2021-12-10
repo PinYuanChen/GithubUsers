@@ -9,14 +9,21 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+// MARK: - Reaction
+
+enum PersonalInfoViewModelReaction {
+    case changeTab
+}
+
 // MARK: - Prototype
 
 protocol PersonalInfoViewModelInput {
-
+    func changeSelectedTab()
 }
 
 protocol PersonalInfoViewModelOutput {
     var model: Observable<PersonalInfoModel> { get }
+    var reaction: PublishRelay<PersonalInfoViewModelReaction> { get }
 }
 
 protocol PersonalInfoViewModelPrototype {
@@ -30,6 +37,7 @@ class PersonalInfoViewModel: PersonalInfoViewModelPrototype {
 
     var input: PersonalInfoViewModelInput { self }
     var output: PersonalInfoViewModelOutput { self }
+    var reaction = PublishRelay<PersonalInfoViewModelReaction>()
     
     init(api: PersonalInfoAPIPrototype?) {
         self.api = api
@@ -46,7 +54,9 @@ class PersonalInfoViewModel: PersonalInfoViewModelPrototype {
 // MARK: - Input & Output
 
 extension PersonalInfoViewModel: PersonalInfoViewModelInput {
-
+    func changeSelectedTab() {
+        reaction.accept(.changeTab)
+    }
 }
 
 extension PersonalInfoViewModel: PersonalInfoViewModelOutput {

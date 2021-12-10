@@ -36,6 +36,7 @@ class PersonalInfoViewController: UIViewController {
     private let emailImageView = UIImageView()
     private let followLabel = UILabel()
     private let emailLabel = UILabel()
+    private let swipeGesture = UISwipeGestureRecognizer()
     private let disposeBag = DisposeBag()
 }
 
@@ -52,6 +53,7 @@ private extension PersonalInfoViewController {
         configureSubLabel()
         configureFollowInfo()
         configureEmailInfo()
+        configureSwipeGesture()
     }
     
     func configureNavigationController() {
@@ -143,12 +145,11 @@ private extension PersonalInfoViewController {
         }
         emailLabel.textColor = .lightGray
     }
-}
-
-// MARK: - Private func
-
-private extension PersonalInfoViewController {
-
+    
+    func configureSwipeGesture() {
+        swipeGesture.direction = .right
+        view.addGestureRecognizer(swipeGesture)
+    }
 }
 
 // MARK: - Binding
@@ -156,18 +157,31 @@ private extension PersonalInfoViewController {
 private extension PersonalInfoViewController {
 
     func bind(_ viewModel: PersonalInfoViewModelPrototype) {
+        
         viewModel
             .output
             .model
             .subscribe(onNext: { [weak self] model in
+                
                 guard let self = self,
                       let imgURL = model.avatarURL else { return }
+                
                 self.profileImageView.kf.setImage(with: URL(string: imgURL))
                 self.nameLabel.text = model.name
                 self.subLabel.text = model.login
                 self.followLabel.text = "\(model.followers ?? 0) followers, \(model.following ?? 0) following"
                 self.emailLabel.text = model.email
+                
             })
             .disposed(by: disposeBag)
+        
+        swipeGesture
+            .rx
+            .event
+            .subscribe(onNext: { _ in
+                viewModel.input.changeSelectedTab()
+            })
+            .disposed(by: disposeBag)
+        
     }
 }

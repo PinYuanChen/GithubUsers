@@ -83,12 +83,28 @@ private extension MainTabBarCoordinator {
             
             switch $0 {
             case .userList:
+                
                 let tab = UserListCoordinator()
                 coordinator = tab
                 
             case .personalInfo:
 
                 let tab = PersonalInfoCoordinator()
+                
+                tab
+                    .reaction
+                    .subscribe(onNext: { [weak self] reaction in
+                        
+                        guard let self = self else { return }
+                        
+                        switch reaction {
+                        case .changeTab:
+                            self.tabBarController?.selectedIndex = 0
+                        }
+                        
+                    })
+                    .disposed(by: disposeBag)
+                
                 coordinator = tab
             }
             
