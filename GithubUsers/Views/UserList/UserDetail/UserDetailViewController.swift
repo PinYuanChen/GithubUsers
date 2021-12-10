@@ -105,7 +105,7 @@ private extension UserDetailViewController {
         infoStack.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(divider.snp.bottom).offset(40)
-            $0.width.equalToSuperview().multipliedBy(0.6)
+            $0.width.equalToSuperview().multipliedBy(0.7)
             $0.height.equalTo(180)
         }
         
