@@ -38,6 +38,7 @@ class PersonalInfoViewController: UIViewController {
     private let followLabel = UILabel()
     private let emailLabel = UILabel()
     private let swipeGesture = UISwipeGestureRecognizer()
+    private let emailDefault = "champion790713@gmail.com"
     private let disposeBag = DisposeBag()
 }
 
@@ -171,7 +172,7 @@ private extension PersonalInfoViewController {
                 self.nameLabel.text = model.name
                 self.subLabel.text = model.login
                 self.followLabel.text = "\(model.followers ?? 0) followers, \(model.following ?? 0) following"
-                self.emailLabel.text = model.email
+                self.emailLabel.text = model.email ?? self.emailDefault
                 
             })
             .disposed(by: disposeBag)
