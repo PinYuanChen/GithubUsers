@@ -1,9 +1,9 @@
 # GithubUsers
-Practice for interview
+A practice project for interview
 
 MVVM-C architecure pattern
 
-RxSwift
+Using RxSwift for data binding
 
 Other 3rd-party libs: Moya, KingFisher, SnapKit
 
